@@ -56,8 +56,8 @@ Route::get('api-docs', function() {
                 $output[$resourceName] = $json;
             }
 
-            $filename = $docDir . '/api-docs.json';
-            file_put_contents($filename, Swagger::jsonEncode($resourceList, true));
+            // $filename = $docDir . '/api-docs.json';
+            // file_put_contents($filename, Swagger::jsonEncode($resourceList, true));
 
             foreach ($output as $name => $json) {
                 $name = str_replace(DIRECTORY_SEPARATOR, '-', ltrim($name, DIRECTORY_SEPARATOR));

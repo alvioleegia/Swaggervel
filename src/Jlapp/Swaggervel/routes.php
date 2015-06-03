@@ -23,6 +23,7 @@ Route::get('api-docs', function() {
         $appDir = base_path()."/".Config::get('swaggervel.app-dir');
         $docDir = Config::get('swaggervel.doc-dir');
 
+        /*
         if (!File::exists($docDir) || is_writable($docDir)) {
             // delete all existing documentation
             if (File::exists($docDir)) {
@@ -56,8 +57,8 @@ Route::get('api-docs', function() {
                 $output[$resourceName] = $json;
             }
 
-            // $filename = $docDir . '/api-docs.json';
-            // file_put_contents($filename, Swagger::jsonEncode($resourceList, true));
+            $filename = $docDir . '/api-docs.json';
+            file_put_contents($filename, Swagger::jsonEncode($resourceList, true));
 
             foreach ($output as $name => $json) {
                 $name = str_replace(DIRECTORY_SEPARATOR, '-', ltrim($name, DIRECTORY_SEPARATOR));
@@ -65,7 +66,7 @@ Route::get('api-docs', function() {
                 file_put_contents($filename, $json);
             }
         }
-    }
+    }*/
 
     if (Config::get('swaggervel.behind-reverse-proxy')) {
         $proxy = Request::server('REMOTE_ADDR');

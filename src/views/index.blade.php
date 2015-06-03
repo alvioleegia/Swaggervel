@@ -32,7 +32,7 @@ header("Access-Control-Allow-Headers: X-Requested-With");
         $(function () {
           var url = "{!! $urlToDocs !!}";
           if (url && url.length > 1) {
-            url = decodeURIComponent(url[1]);
+            url = url;
           } else {
             url = "http://petstore.swagger.io/v2/swagger.json";
           }
